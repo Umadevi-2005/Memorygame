@@ -1,0 +1,81 @@
+body {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f8e1ff; /* Soft purple background */
+  margin: 0;
+  padding: 20px;
+  color: #4b0082; /* Deep violet for text */
+}
+
+h1 {
+  font-size: 3em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+h3 {
+  margin-top: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  width: 400px;
+  height: 400px;
+  perspective: 1000px;
+  padding: 10px;
+  background-color: #d8bfd8; /* A light, dusty mauve color */
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease-in-out;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.card img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 3px solid #f0e6fa; /* A very light purple border */
+}
+
+.card .front {
+  transform: rotateY(180deg);
+}
+
+.card.matched {
+  opacity: 0.5;
+  pointer-events: none;
+  transition: opacity 0.5s ease-out;
+}
+.button1 {
+  background-color: forestgreen;
+  color: white;
+  width:20%;
+  font-size: medium;
+  padding:10px;
+  border-radius: 20px;
+  border: 1px solid forestgreen;
+  box-shadow: 0px 5px 5px grey;
+}
